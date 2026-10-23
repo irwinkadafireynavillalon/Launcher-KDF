@@ -38,8 +38,14 @@ jobs:
 
       - name: Inject Secrets
         run: |
-          echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" > .env
-          echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" > app/.env
+          API_KEY="${{ secrets.GEMINI_API_KEY }}"
+          if [ -z "$API_KEY" ]; then
+            API_KEY="AI_STUDIO_KEY_PLACEHOLDER"
+          fi
+          echo "GEMINI_API_KEY=$API_KEY" > .env
+          echo "GEMINI_API_KEY=$API_KEY" > app/.env
+          echo "GEMINI_API_KEY=$API_KEY" > .env.example
+          echo "GEMINI_API_KEY=$API_KEY" > app/.env.example
 
       - name: Build Android APK (Debug)
         run: |
