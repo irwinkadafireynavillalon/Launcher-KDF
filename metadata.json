@@ -1,0 +1,8 @@
+{
+  "name": "LAUNCH KDF",
+  "description": "Sistema de inicio (System Home Launcher) de alto rendimiento con temas interactivos, fondos procedurales en vivo, personalización extrema, centro de control de hardware y suite IA integrada.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
